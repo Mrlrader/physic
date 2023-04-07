@@ -1,0 +1,42 @@
+WidgetExample:
+
+<WidgetExample>:
+    cols : 3
+    ToggleButton:
+        text : "ON"
+        on_state : root.click_state(self)
+        size_hint : None,1
+        width : "100dp"
+    Button:
+        text : "A"
+        on_press : root.click()
+        disabled : root.count_enable
+    Label:
+        text : root.my_string
+    Switch:
+        size_hint: None,1
+        width : "100dp"
+        on_active : root.switch_active(self)
+<PageLayoutExample>:
+    StackLayoutExample:
+        size_hint: 1,.5
+        height : self.minimum_height
+    AnchorLayoutExample:
+
+<StackLayoutExample>:
+    # orientation : "lr-bt"
+    # padding : ("20dp","20dp","20dp","20dp")
+
+<AnchorLayoutExample>:
+    anchor_x : "left"
+    anchor_y : "top"
+    BoxLayout:
+        size_hint : .4, .4
+        Button:
+            text : "A"
+        Button:
+            text : "B"
+        Button:
+            text : "C"
+        Button:
+            text : "D"
