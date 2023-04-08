@@ -2,6 +2,18 @@
 This is my Test project feel free to use my code as an example
 Nice to meet you
 ```
+# Installation
+
+```
+pip install kivy
+
+pip install python
+
+python TheLabApp/main.py
+```
+
+
+
 ----------------------------
 # Code_creator : Mr_Leader
 # Age : 16-17
