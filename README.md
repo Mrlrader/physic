@@ -7,7 +7,7 @@ Nice to meet you
 ```
 pip install kivy
 
-pip install python
+pip install cpython
 
 python TheLabApp/main.py
 ```
