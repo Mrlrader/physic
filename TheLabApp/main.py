@@ -19,10 +19,13 @@ class Storage(DictStore):
         super().__init__(**kwargs)
         self.get()
 """
+
 class WidgetExample(GridLayout):
     count = 1
+    validate_text = StringProperty("Hit enter")
     count_enable = BooleanProperty(True)
     my_string = StringProperty("1")
+    slider_text = StringProperty("1")
     def click_state(self,widget):
         print("toggle state:" + widget.state)
         if widget.state == "normal":
@@ -31,6 +34,7 @@ class WidgetExample(GridLayout):
             self.count_enable = False
     def click(self):
         print("Button click")
+
         if self.count_enable == False:
             self.count += 1
             self.my_string = str(self.count)
@@ -38,7 +42,11 @@ class WidgetExample(GridLayout):
             print("Nothing")
     def switch_active(self,widget):
         print("Switch :"+ str(widget.active))
-        
+
+    def show_value(self,widget):
+        self.slider_text = str(widget.value)
+    def text_validate(self,widget):
+        self.validate_text = widget.text
 class PageLayoutExample(PageLayout):
     pass
 class ScrollViewExample(ScrollView):

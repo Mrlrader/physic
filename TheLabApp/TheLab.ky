@@ -1,5 +1,17 @@
-WidgetExample:
+ImagesExample:
 
+<ImagesExample@GridLayout>:
+    cols : 3
+    spacing : "10dp"
+    Image:
+        source : "Anime_Images/anime_1.jpg"
+    Image:
+        source : "Anime_Images/anime_1.jpg"
+        allow_stretch : False
+    Image:
+        source : "Anime_Images/anime_3.png"
+        allow_stretch : True
+        keep_ratio : True
 <WidgetExample>:
     cols : 3
     ToggleButton:
@@ -17,6 +29,30 @@ WidgetExample:
         size_hint: None,1
         width : "100dp"
         on_active : root.switch_active(self)
+    Slider:
+        id : slider_exe
+        min : 0
+        max : 100
+        value : 50
+        on_value : root.show_value(self)
+        orientation : "horizontal"
+    BoxLayout:
+        Label:
+            text : str(slider_exe.value)
+        ProgressBar:
+            min : 0
+            max : 100
+            value : slider_exe.value
+    TextInput:
+        id : text_input
+        size_hint : None,1
+        width : "100dp"
+        text : "LOL"
+        multiline : False
+        active : False
+        on_text_validate : root.text_validate(self)
+    Label:
+        text : root.validate_text
 <PageLayoutExample>:
     StackLayoutExample:
         size_hint: 1,.5
